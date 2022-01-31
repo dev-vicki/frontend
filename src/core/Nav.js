@@ -18,24 +18,28 @@ const Nav = ({ history }) => (
           Home
         </Link>
       </li>
-      <li className="nav-item">
-        <Link
-          style={currentNav(history, "/user/dashboard")}
-          className="nav-link"
-          to="/user/dashboard"
-        >
-          U. Dashboard
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link
-          style={currentNav(history, "/admin/dashboard")}
-          className="nav-link"
-          to="/admin/dashboard"
-        >
-          A. Dashboard
-        </Link>
-      </li>
+      {isAuthenticated() && isAuthenticated().user.role === 0 && (
+        <li className="nav-item">
+          <Link
+            style={currentNav(history, "/user/dashboard")}
+            className="nav-link"
+            to="/user/dashboard"
+          >
+            U. Dashboard
+          </Link>
+        </li>
+      )}
+      {isAuthenticated() && isAuthenticated().user.role === 1 && (
+        <li className="nav-item">
+          <Link
+            style={currentNav(history, "/admin/dashboard")}
+            className="nav-link"
+            to="/admin/dashboard"
+          >
+            A. Dashboard
+          </Link>
+        </li>
+      )}
       <li className="nav-item">
         <Link
           style={currentNav(history, "/cart")}
