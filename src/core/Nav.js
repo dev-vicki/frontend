@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import {Link, withRouter} from "react-router-dom"
+import {signout, isAuthenticated} from "../auth/helper"
 
 const currentNav = (history, path) => {
     if(history.location.pathname === path){
@@ -44,33 +45,42 @@ const Nav = ({ history }) => (
           Cart
         </Link>
       </li>
-      <li className="nav-item">
-        <Link
-          style={currentNav(history, "/signup")}
-          className="nav-link"
-          to="/signup"
-        >
-          Sign up
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link
-          style={currentNav(history, "/signin")}
-          className="nav-link"
-          to="/signin"
-        >
-          Sign in
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link
-          style={currentNav(history, "/signout")}
-          className="nav-link"
-          to="/signout"
-        >
-          Sign out
-        </Link>
-      </li>
+      {!isAuthenticated() && (
+        <Fragment>
+          <li className="nav-item">
+            <Link
+              style={currentNav(history, "/signup")}
+              className="nav-link"
+              to="/signup"
+            >
+              Sign up
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              style={currentNav(history, "/signin")}
+              className="nav-link"
+              to="/signin"
+            >
+              Sign in
+            </Link>
+          </li>
+        </Fragment>
+      )}
+      {isAuthenticated() && (
+        <li className="nav-item">
+          <span
+            className="nav-link text-warning"
+            onClick={() => {
+              signout(() => {
+                history.push("/");
+              });
+            }}
+          >
+            Signout
+          </span>
+        </li>
+      )}
     </ul>
   </div>
 );
