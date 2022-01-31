@@ -42,7 +42,7 @@ const Signup = () => {
         const signUpForm = () => {
             return (
               <div className="row">
-                <div className="col-md-6 0ffset-sm-3 text-left">
+                <div className="col-md-6 offset-sm-3 text-left">
                   <form>
                     <div className="form-group">
                       <label className="text-light">Name</label>
@@ -82,12 +82,12 @@ const Signup = () => {
         const successMessage = () => {
           return (
             <div className="row">
-              <div className="col-md-6 0ffset-sm-3 text-left">
+              <div className="col-md-6 offset-sm-3 text-left">
                 <div
                   className="alert alert-success"
                   style={{ display: success ? "" : "none" }}
                 >
-                  New account was created successfully. Please{" "}
+                  New account was created successfully. Please
                   <Link to="/signin">Login Here</Link>
                 </div>
               </div>
@@ -98,7 +98,7 @@ const Signup = () => {
         const errorMessage = () => {
           return (
             <div className="row">
-              <div className="col-md-6 0ffset-sm-3 text-left">
+              <div className="col-md-6 offset-sm-3 text-left">
           <div
             className="alert alert-danger"
             style={{ display: error ? "" : "none" }}
