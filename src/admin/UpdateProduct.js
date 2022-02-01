@@ -115,7 +115,7 @@ const preloadCategories = () => {
       className="alert alert-danger mt-3"
       style={{ display: error ? "" : "none" }}
     >
-      <h4>{error} failed to create product</h4>
+      <h4>{error} failed to update product</h4>
     </div>
   );
 
@@ -207,6 +207,7 @@ const preloadCategories = () => {
       <div className="row bg-white text-white rounded">
         <div className="col-md-8 offset-md-2">
           {successMessage()}
+          {errorMessage()}
           {createProductForm()}
         </div>
       </div>
