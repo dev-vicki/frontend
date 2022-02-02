@@ -25,7 +25,7 @@ const Nav = ({ history }) => (
             className="nav-link"
             to="/user/dashboard"
           >
-            U. Dashboard
+            Dashboard
           </Link>
         </li>
       )}
@@ -36,7 +36,7 @@ const Nav = ({ history }) => (
             className="nav-link"
             to="/admin/dashboard"
           >
-            A. Dashboard
+            Admin Dashboard
           </Link>
         </li>
       )}
@@ -73,7 +73,7 @@ const Nav = ({ history }) => (
       )}
       {isAuthenticated() && (
         <li className="nav-item">
-          <span
+          <button
             className="nav-link text-warning"
             onClick={() => {
               signout(() => {
@@ -82,7 +82,7 @@ const Nav = ({ history }) => (
             }}
           >
             Signout
-          </span>
+          </button>
         </li>
       )}
     </ul>

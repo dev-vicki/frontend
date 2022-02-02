@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from './Nav';
-
+import styles from "../styles.css"
 
 const Base = ({
   title = "My title",
@@ -17,16 +17,16 @@ const Base = ({
       </div>
       <div className={className}>{children}</div>
     </div>
-    <footer className="footer bg-dark mt-auto py-3">
-      <div className="container-fluid bg-success text-white text-center py-3">
-        <h4>If you got any questions feel free to reach out</h4>
-        <button className="btn btn-warning btn-lg">Contact Us</button>
+    <footer className="footer fixed-bottom bg-dark">
+      <div className="container-fluid sm-success text-white text-center">
+        <h6>If you got any questions feel free to reach out</h6>
+        <button className="btn btn-warning btn-sm">Contact Us</button>
       </div>
-      <div className="container">
+      {/* <div className="container">
         <span className="text-muted text-white">
-          An Amazing place to things..
+          An Amazing place to buy things..
         </span>
-      </div>
+      </div> */}
     </footer>
   </div>
 );

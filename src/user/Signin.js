@@ -111,12 +111,11 @@ const Signin = () => {
     };
 
   return (
-    <Base title="Sign in page" description="Signed in successfully">
+    <Base title="Signin page" description="Sign in using your credentials">
      {loadingMessage}
      {errorMessage()}
      {signInForm()}
      {performRedirect()}
-     <p className="text-white text-center">{JSON.stringify(values)}</p>
     </Base>
   );
 };
