@@ -10,7 +10,7 @@ const PicHelper = ({product}) => {
       <img
         src={imageurl}
         alt=""
-        style={{ maxHeight: "100%", maxWidth: "100%" }}
+        style={{ maxHeight: "350px", maxWidth: "350px" }}
         className="mb-3 rounded"
       />
     </div>
